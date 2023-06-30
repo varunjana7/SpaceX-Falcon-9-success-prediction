@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SpaceX Falcon 9 First Stage Landing Success Predictor Result</title>
+  <style>
+    body {
+      background-image: url('/static/landing.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      position: relative;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .result {
+      color: #ffffff;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .thank-you {
+      color: #fff;
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="container">
+  <div class="result">
+    {% if prediction_text %}
+       <h2>Prediction: {{ prediction_text }}</h2>
+   {% endif %}
+   </div>
+   </div>
+    
+    
+    
+    <div class="thank-you">
+      <p><mark>Thank you !.. </mark>for using the </br>
+      <p>!..............................!</p>
+      <p><strong>SpaceX Falcon 9 First Stage Landing Success Predictor</strong></p>
+    </div>
+  </div>
+</body>
+</html>

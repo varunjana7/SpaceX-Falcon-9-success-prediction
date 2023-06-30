@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SpaceX Falcon 9 First Stage Landing Success Predictor</title>
+  <style>
+    body {
+      background-image: url('/static/home1.jpg');
+      background-size: cover;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      margin-top: 100px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input[type="text"],
+    select {
+      width: 100%;
+      padding: 5px;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 20px;
+      background-color: #4CAF50;
+      border: none;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    
+    .prediction {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .prediction h2 {
+      color: #fff;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .prediction .success {
+      color: green;
+    }
+
+    .prediction .failure {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>SpaceX Falcon 9 First Stage Landing Success Predictor</h1>
+    <form  method="POST" action="/pred">
+      <label for="payload-mass">Payload Mass:</label>
+      <input type="text" id="payload-mass" name="payload-mass" placeholder="Enter Payload Mass (kg)">
+
+      <label for="orbit">Orbit:</label>
+      <select id="orbit" name="orbit">
+         <option value="5">LEO</option>
+         <option value="4">ISS</option>
+         <option value="2">GTO</option>
+         <option value="7">PO</option>
+         <option value="10">VLEO</option>
+         <option value="6">MEO</option>
+        <option value="0">SSO</option>
+        <option value="1">ES-L1</option>
+        <option value="3">HEO</option>
+       <option value="8">SO</option>
+       <option value="9">GEO</option>
+      </select>
+
+      <label for="launch-site">Launch Site:</label>
+      <select id="launch-site" name="launch-site">
+        <option value="0">CCSFS SLC 40</option>
+        <option value="2">VAFB SLC 4E</option>
+        <option value="1">KSC LC 39A</option>
+      </select>
+
+      <label for="longitude">Longitude:</label>
+      <select id="longitude" name="longitude">
+        <option value="2">-80.577366</option>
+        <option value="0">-120.610829</option>
+        <option value="1">-80.603956</option>
+      </select>
+
+      <label for="latitude">Latitude:</label>
+      <select id="latitude" name="latitude">
+        <option value="0">28.561857</option>
+        <option value="1">28.608058</option>
+        <option value="2">34.632093</option>
+      </select>
+
+      <label>Grid Fins:</label>
+      <label for="grid-fins-used">
+        <input type="radio" id="grid-fins-used" name="grid-fins" value="1"> Used
+      </label>
+      <label for="grid-fins-not-used">
+        <input type="radio" id="grid-fins-not-used" name="grid-fins" value="0"> Not Used
+      </label>
+
+      <label>Legs:</label>
+      <label for="legs-used">
+        <input type="radio" id="legs-used" name="legs" value="1"> Used
+      </label>
+      <label for="legs-not-used">
+        <input type="radio" id="legs-not-used" name="legs" value="0"> Not Used
+      </label>
+
+      <label for="core-version">Core Block Version:</label>
+      <select id="core-version" name="core-version">
+        <option value="1.0">1.0</option>
+        <option value="2.0">2.0</option>
+        <option value="3.0">3.0</option>
+        <option value="4.0">4.0</option>
+        <option value="5.0">5.0</option>
+      </select>
+
+      <label for="core-flights">Flights with Core:</label>
+      <input type="text" id="core-flights" name="core-flights" placeholder="Enter Flights with Core">
+
+      <label for="core-reused-count">Core Reused Count:</label>
+      <input type="text" id="core-reused-count" name="core-reused-count" placeholder="Enter Core Reused Count">
+
+
+      <input type="submit" value="Launch" >
+      
+    </form>
+
+    
+    <!-- {% if prediction_text %}
+        <h2>Prediction: {{ prediction_text }}</h2>
+    {% endif %}  -->
+   
+    </div>
+</body>
+</html>
+    
+  
